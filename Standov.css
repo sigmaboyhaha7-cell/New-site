@@ -1,0 +1,73 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1bf122;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #22ba17;
+  border: 2px solid #f52a2a;
+}
+
+.circle {
+  position: absolute;
+  top: 300px; 
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: moveCircle 6s ease-in-out forwards;
+}
+
+@keyframes moveCircle {
+  0%   { left: -50px; }
+  40%  { left: 700px; }
+  100% { left: 2000px; }
+}
+
+
+.text {
+  position: absolute;
+  top: 50px;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  opacity: 0;
+}
+
+.decelerate {
+  top: 300px;
+  right: 200px;
+  color: #fc0000;
+  animation: showDecelerate 3s;
+}
+
+.accelerate {
+  top: 300px;
+  left: 200px;
+  color: #fc0000;
+  animation: showAccelerate 6s 3s;
+}
+
+@keyframes showDecelerate {
+  0%   { opacity: 0; right: -200px; }
+  40%  { opacity: 1; right: 200px; }
+  50%  { opacity: 1; right: 200px; }
+  100% { opacity: 0; right: 200px; }
+}
+
+@keyframes showAccelerate {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
